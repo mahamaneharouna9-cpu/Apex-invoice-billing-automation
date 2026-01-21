@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-fintech-primary: #0f172a;
+  --color-fintech-cta: #0284c7;
+  --color-fintech-border: #334155;
+  --color-fintech-bg: #020617;
+
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --backdrop-blur-xs: 2px;
+}
+
+:root {
+  font-family: var(--font-body);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--color-fintech-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-fintech-bg);
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply px-6 py-2 bg-[var(--color-fintech-cta)] hover:bg-sky-500 text-white font-medium rounded-lg transition-all duration-300 shadow-lg shadow-sky-500/20 active:scale-95;
+  }
+
+  .nav-link {
+    @apply text-slate-400 hover:text-white transition-colors duration-200;
+  }
+}
